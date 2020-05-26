@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Visual Correspondance!</title>
+    </head>
+    <body>
+        <style>
+            h2 {
+                text-align: center;
+                color: red;
+                text-decoration: underline;
+            }
+            h4 {
+                text-align: center;
+            }
+            button {
+                border-radius: 4px;
+                font-size: 16px;
+            }
+            .square {
+                width: 50px;
+                height: 50px;
+                background-color: orange;
+                border: 1px solid black;
+                position: absolute;
+                box-sizing: border-box;
+            }
+            .yellowText {
+                color:orange;
+            }
+            .purpleText {
+                color:purple;
+            }
+            .redText {
+                color:red;
+            }
+            #imgA {
+                width: "500px;" 
+            }
+            #present {
+                display: none;
+            }
+            .outline {
+                float: left;
+                margin-left: 87px;
+                margin-top: 67px;
+                border: 1px solid #000;
+                box-sizing: border-box;
+                width:500px;
+                height:500px;
+                display: none;
+            }
+            .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .imgB {
+                display: block;
+                width:"240px;" 
+            }
+            .column {
+                float: left;
+                padding: 16px;
+            }
+            .row {
+                width: "500px";
+                margin-left: auto;
+                margin-right: auto;
+                content: "";
+                clear: both;
+                display: table;
+            }
+            #final_instructions {
+                display: none;
+            }
+        </style>       
+        <h2><em><strong>Welcome to our Visual Random Correspondance Task</strong></em></h2>
+        <h4>In this task you will be comparing two side by side screens. <br /> You will have to determine if the image on the left is the same
+            as the image on the right. <br /> For example in this image, the <span class="purpleText">purple</span> was replaced by <span class="yellowText">yellow</span>:
+        </h4>
+        <img id="imgA" class="center" src="diff.png" style="width: 500px"/>
+        <h4>If this is the case for the two images, the images are different so please press the key 'd'.</h4>
+        <h4>In this image, however, there was <red>no change</red>:</h4>
+        <img id="imgA" class="center" src="same.png" style="width: 500px"/>
+        <h4 style="text-align: center">In this case, the images are the same so please press the key 's'.</h4>
+        <h4><span class="redText">There will be a code that appears at the end of the experiment. Please email this to dkasima1@jhu.edu (the email will also be available at the end).</span></h4>
+        <h4 style="text-align: center">Press continue to start the experiment.</h4>
+
+        <div id="borders" style="display: none";>
+            <div class="outline">
+                <div id="outline"></div>
+            </div>
+            <div class="outline">
+                <div id="outline"></div>
+            </div>
+        </div>
+        <input id="present"></input>
+        <div id="final_instructions">Thank you for completing our experiment. Please enter this code into mTurk: <em><strong>SJADHLJ180</strong></em></div>
+        <button onclick=startExperiment() class="center">Continue</button>
+        <script src="main.js"></script>
+    </body>
+</html>
